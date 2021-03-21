@@ -29,6 +29,13 @@
   },
   "private": true,
   "dependencies": {
+    "@nestjs/common": "^7.0.0",
+    "@nestjs/core": "^7.0.0",
+    "@nestjs/platform-express": "^7.0.0",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "~6.6.3"
+  },
+  "devDependencies": {
     "@angular/animations": "^11.2.0",
     "@angular/cdk": "^11.2.4",
     "@angular/common": "^11.2.0",
@@ -40,17 +47,7 @@
     "@angular/platform-browser-dynamic": "^11.2.0",
     "@angular/router": "^11.2.0",
     "@angular/service-worker": "^11.2.0",
-    "@nestjs/common": "^7.0.0",
-    "@nestjs/core": "^7.0.0",
-    "@nestjs/platform-express": "^7.0.0",
     "@ngneat/until-destroy": "^8.0.4",
-    "@nrwl/angular": "11.5.1",
-    "reflect-metadata": "^0.1.13",
-    "rxjs": "~6.6.3",
-    "tslib": "^2.0.0",
-    "zone.js": "^0.10.2"
-  },
-  "devDependencies": {
     "@angular-devkit/build-angular": "~0.1102.0",
     "@angular-eslint/eslint-plugin": "~1.0.0",
     "@angular-eslint/eslint-plugin-template": "~1.0.0",
@@ -60,6 +57,7 @@
     "@angular/language-service": "^11.2.0",
     "@nestjs/schematics": "^7.0.0",
     "@nestjs/testing": "^7.0.0",
+    "@nrwl/angular": "11.5.1",
     "@nrwl/cli": "11.5.1",
     "@nrwl/cypress": "11.5.1",
     "@nrwl/eslint-plugin-nx": "11.5.1",
@@ -87,7 +85,9 @@
     "prettier": "2.2.1",
     "ts-jest": "26.4.0",
     "ts-node": "~9.1.1",
+    "tslib": "^2.0.0",
     "typescript": "~4.0.3",
-    "webpack": "^4.18.1"
+    "webpack": "^4.18.1",
+    "zone.js": "^0.10.2"
   }
 }

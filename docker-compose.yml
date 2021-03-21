@@ -1,0 +1,34 @@
+version: '3'
+services:
+  # Web App
+  farmer-web:
+    build:
+      context: .
+      dockerfile: apps/farmer/Dockerfile
+    image: hallysonh/farmer-web:latest
+    restart: always
+    container_name: farmer-web
+    ports:
+      - 4200:80
+    networks:
+      - farmer-network
+
+  # API App
+  farmer-api:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    image: hallysonh/farmer-api:latest
+    restart: always
+    container_name: farmer-api
+    ports:
+      - 3333:3333
+    volumes:
+      - ./src:/usr/src/app/src:rw
+    networks:
+      - farmer-network
+
+#Docker Networks
+networks:
+  farmer-network:
+    driver: bridge
