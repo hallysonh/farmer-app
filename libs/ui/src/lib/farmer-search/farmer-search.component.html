@@ -1,0 +1,26 @@
+<mat-card>
+  <div class="row">
+    <mat-form-field class="flex1" appearance="fill" floatLabel="never">
+      <input matInput placeholder="Nome or Doc#" [formControl]="queryControl" />
+      <mat-icon matPrefix>search</mat-icon>
+      <mat-icon matSuffix>arrow_forward</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="flex2">
+      <mat-label>Remetente</mat-label>
+      <input matInput placeholder="Destinátario" [value]="selectedFarmer?.name" [disabled]="true" />
+    </mat-form-field>
+  </div>
+
+  <div class="row">
+    <mat-form-field class="flex1">
+      <mat-label>Doc#</mat-label>
+      <input matInput placeholder="Doc#" [value]="selectedFarmer?.document?.documentNumber" [disabled]="true" />
+    </mat-form-field>
+
+    <mat-form-field class="flex3">
+      <mat-label>Endereço</mat-label>
+      <input matInput placeholder="Endereço" [value]="selectedFarmer?.address?.address" [disabled]="true" />
+    </mat-form-field>
+  </div>
+</mat-card>

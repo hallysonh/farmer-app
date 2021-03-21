@@ -1,0 +1,37 @@
+:host {
+  display: block;
+  max-width: 39em;
+}
+
+.flex1 {
+  flex: 1;
+}
+
+.flex2 {
+  flex: 2;
+}
+
+.flex3 {
+  flex: 3;
+}
+
+.mat-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5em 1.5em 0.8em;
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+
+    & > * {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+
+    mat-icon {
+      margin-right: 5px;
+    }
+  }
+}
