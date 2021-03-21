@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { By } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { DocumentNumberPipe } from '../pipes/document-number.pipes';
 import { FarmerSearchComponent } from './farmer-search.component';
 
 describe('FarmerSearchComponent', () => {
@@ -15,7 +16,10 @@ describe('FarmerSearchComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [FarmerSearchComponent],
+      declarations: [
+        FarmerSearchComponent,
+        DocumentNumberPipe,
+      ],
       imports: [
         NoopAnimationsModule,
         ReactiveFormsModule,
