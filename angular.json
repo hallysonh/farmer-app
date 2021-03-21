@@ -121,6 +121,32 @@
         }
       }
     },
+    "farmer-e2e": {
+      "root": "apps/farmer-e2e",
+      "sourceRoot": "apps/farmer-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/farmer-e2e/cypress.json",
+            "tsConfig": "apps/farmer-e2e/tsconfig.e2e.json",
+            "devServerTarget": "farmer:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "farmer:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/farmer-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
     "api": {
       "root": "apps/api",
       "sourceRoot": "apps/api/src",

@@ -1,0 +1,16 @@
+[
+  {
+    "id": "0",
+    "name": "JOAO SILVA",
+    "document": {
+      "documentNumber": "47512282911",
+      "documentType": "CPF"
+    },
+    "address": {
+      "street": "Rua 0",
+      "address": "RUA BERRINI 505 22050401",
+      "state": "PI",
+      "country": "Brazil"
+    }
+  }
+]

@@ -17,6 +17,7 @@
   },
   "projects": {
     "farmer": { "tags": [] },
+    "farmer-e2e": { "tags": [], "implicitDependencies": ["farmer"] },
     "api": { "tags": [] },
     "api-interfaces": { "tags": [] },
     "ui": { "tags": [] }
