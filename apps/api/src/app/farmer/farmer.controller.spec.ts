@@ -16,10 +16,12 @@ describe('FarmerController', () => {
   describe('serch', () => {
     it('should return Farmer with id equals to "1"', async () => {
       const appController = app.get<FarmerController>(FarmerController);
-      const id = '1';
-      const farmer = await appController.serch(id);
-      expect(farmer).not.toBeNull();
-      expect(farmer.id).toEqual(id);
+      const query = 'JOAO';
+      const list = await appController.serch(query);
+      expect(list).not.toBeNull();
+      expect(list.length).toBe(1);
+      expect(list[0].id).toEqual('0');
+      expect(list[0].name).toEqual('JOAO SILVA');
     });
   });
 });
