@@ -1,0 +1,47 @@
+name: Build and Deploy
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  install-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Use Node.js 15.x
+        uses: actions/setup-node@master
+        with:
+          node-version: 15.x
+      - uses: c-hive/gha-yarn-cache@v1
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+      - name: Lint
+        run: |
+          yarn lint ui
+          yarn lint api
+          yarn lint farmer
+      - name: Test
+        run: |
+          yarn test ui --configuration=ci
+          yarn test api --configuration=ci
+          yarn test farmer --configuration=ci
+      - name: Build
+        run: |
+          yarn build api --prod
+          yarn build farmer --prod
+      - name: E2E
+        run: yarn e2e --browser chrome
+        env:
+          CI: true
+      - uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: dist/cypress/apps/farmer-e2e/screenshots
+      # Test run video was always captured, so this action uses "always()" condition
+      - uses: actions/upload-artifact@v1
+        if: always()
+        with:
+          name: cypress-videos
+          path: dist/cypress/apps/farmer-e2e/videos

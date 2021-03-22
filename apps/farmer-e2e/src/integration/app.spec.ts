@@ -28,6 +28,8 @@ describe('farmer', () => {
 
     cy.wait('@searchFarmer');
 
+    cy.screenshot();
+
     getNameField()
       .invoke('val')
       .then(inputValue => {

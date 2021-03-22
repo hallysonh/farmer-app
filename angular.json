@@ -126,6 +126,12 @@
           "options": {
             "jestConfig": "apps/farmer/jest.config.js",
             "passWithNoTests": true
+          },
+          "configurations": {
+            "ci": {
+              "watch": false,
+              "progress": false
+            }
           }
         }
       }
@@ -213,6 +219,12 @@
           "options": {
             "jestConfig": "apps/api/jest.config.js",
             "passWithNoTests": true
+          },
+          "configurations": {
+            "ci": {
+              "watch": false,
+              "progress": false
+            }
           }
         }
       }
@@ -255,6 +267,12 @@
           "options": {
             "jestConfig": "libs/ui/jest.config.js",
             "passWithNoTests": true
+          },
+          "configurations": {
+            "ci": {
+              "watch": false,
+              "progress": false
+            }
           }
         }
       }
